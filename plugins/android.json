@@ -1,0 +1,40 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-advanced-http": {
+      "PACKAGE_NAME": "io.ionic.myresto"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "io.ionic.myresto"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "io.ionic.myresto"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "io.ionic.myresto"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "io.ionic.myresto"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "io.ionic.myresto"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "io.ionic.myresto"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "io.ionic.myresto"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "io.ionic.myresto"
+    }
+  }
+}

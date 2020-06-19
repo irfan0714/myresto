@@ -1,0 +1,36 @@
+<ion-content class="content-login">
+  <img src="assets/imgs/bg.png" alt="">
+  <div class="wrapper-login">
+    <div style="width: 60%;">
+      <div style="text-align: center;padding-bottom: -10px">
+        <img src="assets/imgs/mylogo.png" alt="" width="200" height="200">
+      </div>
+      <ion-row class="form-login">
+        <ion-grid>
+          <ion-row>
+            <ion-col (click)="checkin()">
+              <ion-card style=" background: transparent">
+                <img src="assets/imgs/taking_order.png" width="100" height="100" />
+              </ion-card>
+            </ion-col>
+            <ion-col (click)="list_order()">
+              <ion-card style=" background: transparent">
+                <img id="cards" src="assets/imgs/list_order.png" width="100" height="100" />
+              </ion-card>
+            </ion-col>
+            <ion-col (click)="split_bill()">
+              <ion-card style=" background: transparent">
+                <img src="assets/imgs/split_bill.png" width="100" height="100" />
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-row>
+    </div>
+  </div>
+  <ion-fab bottom right>
+    <button large ion-fab color="grey_" (click)="setting_pages()">
+      <ion-icon name='settings'></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

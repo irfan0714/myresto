@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-navbar color="grey_">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="optional_menu(NoSticker)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Detail List Order {{Table_order}} / <span id="stickerpure">{{NoSticker}}</span> <span id="stickernotpure"
+        style="display:none">{{no_sticker}}</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="getstart">
+  <br>
+  <ion-item-group>
+    <ion-list>
+      <span *ngFor="let listMenu of listing_menu; let i = index;">
+        <ion-item-sliding id="viewDetail{{i}}" *ngIf="listMenu.Sts!='2'">
+          <ion-item>
+            <ion-label><b><span>{{listMenu.Nm}}</span></b><span style="display:none;"
+                id="{{'ls_'+listMenu.PCode+''+listMenu.noOrder}}">{{listMenu.Sts}}</span><br><span
+                style="font-size:9pt;"><span>{{listMenu.Quty}}
+                  Pcs.</span>
+                <span *ngIf="listMenu.Wght!='0'"><span>{{listMenu.Wght}} gr.</span></span>
+                <span *ngIf="listMenu.Nt!=''">Note
+                  : </span>
+                <span>{{listMenu.Nt}}</span></span></ion-label>
+            <!-- <ion-checkbox color="dark" name="checklist[]" id="checklist{{i}}" checked="false"></ion-checkbox> -->
+            <ion-checkbox *ngIf="listMenu.Sts=='0'" id="showCheckBoxes{{i}}" [(ngModel)]="listMenu.chk" color="dark"
+              [checked]="selectedAll"></ion-checkbox>
+            <ion-checkbox style="font-size: 30px" *ngIf="listMenu.Sts=='1'" id="showCheckBoxes{{i}}"
+              [(ngModel)]="listMenu.chk" color="dark" [checked]="selectedAll" style="display:none"></ion-checkbox>
+            <h3 item-end>
+              <ion-icon style="font-size: 30px" *ngIf="listMenu.Sts=='0'" id="oke{{i}}" color="dark"
+                name="checkmark-circle-outline" style="display:none"></ion-icon>
+              <ion-icon style="font-size: 30px" *ngIf="listMenu.Sts=='1'" id="oke{{i}}" color="dark"
+                name="checkmark-circle-outline"></ion-icon>
+            </h3>
+          </ion-item>
+          <ion-item-options side="right">
+            <button id="weightOrder{{i}}" *ngIf="listMenu.Sts=='0'" ion-button color="natura"
+              (click)="weightOrder(i,listMenu.Sts,listMenu.PCode,listMenu.Quty,listMenu.noOrder)">
+              <ion-icon style="font-size: 30px" name="pizza"></ion-icon>
+            </button>
+            <button id="weightOrderDone{{i}}" style="display:none" *ngIf="listMenu.Sts=='1'" ion-button color="natura"
+              (click)="weightOrder(i,listMenu.Sts,listMenu.PCode,listMenu.Quty,listMenu.noOrder)">
+              <ion-icon style="font-size: 30px" name="pizza"></ion-icon>
+            </button>
+
+
+            <button id="unlockOrder{{i}}" style="display:none" *ngIf="listMenu.Sts=='0'" ion-button color="secret"
+              (click)="unlockOrder(i,listMenu.Sts,listMenu.PCode,listMenu.Quty,listMenu.noOrder)">
+              <ion-icon style="font-size: 30px" name="unlock"></ion-icon>
+            </button>
+            <button id="unlockOrderDone{{i}}" *ngIf="listMenu.Sts=='1'" ion-button color="secret"
+              (click)="unlockOrder(i,listMenu.Sts,listMenu.PCode,listMenu.Quty,listMenu.noOrder)">
+              <ion-icon style="font-size: 30px" name="unlock"></ion-icon>
+            </button>
+
+
+            <button id="deleteOrder{{i}}" *ngIf="listMenu.Sts=='0'" ion-button color="danger"
+              (click)="deleteOrder(i,listMenu.Sts,listMenu.PCode,listMenu.Quty,listMenu.noOrder)">
+              <ion-icon style="font-size: 30px" name="trash"></ion-icon>
+            </button>
+            <button id="deleteOrderDone{{i}}" style="display:none" *ngIf="listMenu.Sts=='1'" ion-button color="danger"
+              (click)="deleteOrder(i,listMenu.Sts,listMenu.PCode,listMenu.Quty,listMenu.noOrder)">
+              <ion-icon style="font-size: 30px" name="trash"></ion-icon>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </span>
+    </ion-list>
+
+  </ion-item-group>
+
+
+  <ion-fab bottom right>
+    <button large ion-fab color="grey_" (click)="btn_refresh()">
+      <ion-icon name='refresh'></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+
+<ion-footer>
+  <ion-navbar color="grey_">
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 id="chackedAll">
+            <button ion-button large block color="green_" id="chkall" (click)="CheckAll()">Select
+              All</button>
+          </ion-col>
+          <ion-col col-6 id="unchackedAll" style="display:none;">
+            <button large ion-button block color="danger" id="chkall" (click)="UnCheckAll()">Unselect
+              All</button>
+          </ion-col>
+          <ion-col col-6>
+            <button large ion-button block color="primary" (click)="doneOrder()">Done</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-navbar>
+</ion-footer>

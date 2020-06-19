@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar color="grey_">
+    <ion-buttons start>
+      <button *ngIf="open_menu=='Y'" ion-button icon-only (click)="btn_menu_open(NoSticker)">
+        <ion-icon name="eye"></ion-icon>
+      </button>
+      <button *ngIf="open_menu=='N'" ion-button icon-only (click)="btn_menu_close(NoSticker)">
+        <ion-icon name="eye-off"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Split Bill {{table}}</ion-title>
+  </ion-navbar>
+
+  <ion-navbar color="light2" *ngIf="checking_list_menu=='Y'">
+    <div>
+      <ion-list no-border padding>
+        <ion-item *ngFor="let key of checking_listing_menu">
+          <ion-icon name='checkbox-outline' item-start></ion-icon>
+          {{key.name}}
+          <ion-note item-end>
+            {{key.quantity}}
+          </ion-note>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="getstart">
+  <ion-list>
+
+    <span *ngFor="let val of splitdetail;let i = index;">
+      <ion-item-sliding id="{{val.order_id}}">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/imgs/ica-slidebox-img-1.png">
+          </ion-avatar>
+          <h2><b>{{val.table_id}}</b></h2>
+          <p>Split Bill {{i+1}} / No.Temp Order : {{val.order_id}}</p>
+          <button color="dark" ion-button clear item-end id="{{'open'+val.table_id+''+i}}" (click)="open(val.table_id,i)">
+            <ion-icon style="font-size: 30px" name="arrow-dropright"></ion-icon>
+          </button>
+          <button color="dark" style="display:none;" ion-button clear item-end id="{{'close'+val.table_id+''+i}}"
+            (click)="close(val.table_id,i)">
+            <ion-icon style="font-size: 30px" name="arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <!-- <ion-item-options side="left">
+          <button ion-button color="primary">
+            <ion-icon name="trash"></ion-icon>
+            DEL
+          </button>
+          <button ion-button color="secondary">
+            <ion-icon name="trash"></ion-icon>
+            DEL
+          </button>
+        </ion-item-options> -->
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="remove_split(val.order_id, val.table_id, i)">
+            <ion-icon style="font-size: 30px" name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <div style="display:none" id="{{val.table_id+''+i}}">
+        <span *ngFor="let key of listing_menu;let j = index;">
+          <ion-item><b>{{key.Nm}}</b> / <span id="{{'det_'+val.table_id+''+j}}"> {{key.Quty}} </span> Pcs
+            <h3 item-end>
+              <ion-icon style="font-size: 30px" color="dark" name="add-circle" (click)="tambah(j,val.table_id,key.PCode,table,val.order_id,key.Nm)"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+              <ion-icon style="font-size: 30px" color="dark" name="remove-circle" (click)="kurang(j,val.table_id,key.PCode,table)"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+            </h3>
+          </ion-item>
+        </span>
+      </div>
+    </span>
+
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="grey_" (click)="sendingData()">
+      <ion-icon name='paper-plane'></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

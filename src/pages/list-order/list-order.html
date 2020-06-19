@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar color="grey_">
+    <ion-title>List Order</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="getstart">
+  <div *ngIf="Localside=='Y'">
+    <ion-card>
+      <ion-item color="light2">
+        <p color="dark" style="text-align:center"><b><span>Local Side</span></b></p>
+      </ion-item>
+    </ion-card>
+  </div>
+  <ion-grid *ngIf="Localside=='Y'">
+    <ion-row style="text-align: center">
+      <ion-col col-2 *ngFor="let table of tablesLocalSide">
+        <div><button color="orange_" ion-button large (click)="sendingOrder(table.no_trans_order,table.table_id)">
+            <span style="font-size:12pt">{{table.table_id}}<br><span
+                style="font-size:7pt">{{table.table_time}}</span></span>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="Localside=='Y'">
+    <ion-card>
+      <ion-item color="light2">
+        <p color="dark" style="text-align:center"><b><span>Server Side</span></b></p>
+      </ion-item>
+    </ion-card>
+  </div>
+  <ion-grid>
+    <ion-row style="text-align: center">
+      <ion-col col-2 *ngFor="let table of tables">
+        <div (press)="pressEvent($event,table.table_id,table.no_trans_orde)"><button color="{{table.table_color}}"
+            ion-button large (click)="detail_list_order(table.no_trans_order,table.table_id)">
+            <span style="font-size:12pt">{{table.table_id}}</span>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab bottom right>
+    <button large ion-fab color="grey_" (click)="btn_refresh()">
+      <ion-icon name='refresh'></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+<ion-footer>
+  <!-- <ion-navbar color="grey_">
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col nopadding>
+            <button large ion-button block color="green_">10 min</button>
+          </ion-col>
+          <ion-col nopadding>
+            <button large ion-button block color="yellow">20 Min</button>
+          </ion-col>
+          <ion-col nopadding>
+            <button large ion-button block color="danger">30 Min</button>
+          </ion-col>
+          <ion-col nopadding>
+            <button large ion-button block color="primary">Done</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-navbar> -->
+</ion-footer>

@@ -1,0 +1,27 @@
+<ion-content class="tutorial-page">
+
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides">
+      <ion-toolbar>
+        <ion-buttons end>
+          <!-- <button ion-button color="primary">Next</button> -->
+        </ion-buttons>
+      </ion-toolbar>
+      <img [src]="slide.image" class="slide-image" />
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <p [innerHTML]="slide.description"></p>
+      <div *ngIf="slide.buttonIpApi=='Y'"><button ion-button (click)="settingIpApi()">Setting IP API SERVER</button></div>
+      <div *ngIf="slide.buttonSynchronize=='Y'"><button ion-button (click)="synchronizeNow()">Synchronize now</button></div>
+    </ion-slide>
+    <ion-slide>
+      <ion-toolbar>
+      </ion-toolbar>
+      <img src="assets/imgs/ica-slidebox-img-4.png" class="slide-image" />
+      <h2 class="slide-title">Ready to Use?</h2>
+      <button ion-button large clear icon-end color="primary" (click)="homeScreen()">
+        Continue
+        <!-- <ion-icon name="arrow-forward"></ion-icon> -->
+      </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

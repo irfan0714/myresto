@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="grey_">
+    <ion-title>Choose Tables To Split Bill</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="getstart">
+  <div *ngIf="Localside=='Y'">
+    <ion-card>
+      <ion-item color="light2">
+        <p color="dark" style="text-align:center"><b><span>Local Side</span></b></p>
+      </ion-item>
+    </ion-card>
+  </div>
+  <ion-grid *ngIf="Localside=='Y'">
+    <ion-row style="text-align: center">
+      <ion-col col-2 *ngFor="let table of tablesLocalSide">
+        <div><button color="orange_" ion-button large (click)="sendingOrderSplit(table.no_trans_order,table.table_id)">
+            <span style="font-size:12pt">{{table.table_id}}</span>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="Localside=='Y'">
+    <ion-card>
+      <ion-item color="light2">
+        <p color="dark" style="text-align:center"><b><span>Server Side</span></b></p>
+      </ion-item>
+    </ion-card>
+  </div>
+  <ion-grid style="width: auto">
+    <ion-row>
+      <ion-col col-2 *ngFor="let table of tables">
+        <div><button color="primary" ion-button large (click)="split_bills(table.table_id,table.waiters,table.pax,table.nosticker)">{{
+            table.table_id }}</button></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab bottom right>
+    <button large ion-fab color="grey_" (click)="refresh_pages()">
+      <ion-icon name='refresh'></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

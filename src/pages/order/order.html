@@ -1,0 +1,259 @@
+<ion-header>
+  <ion-navbar color="grey_">
+    <ion-title>List Order</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-start>
+        <ion-icon name="contact" color="light"></ion-icon> {{waiter}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="getstart">
+  <div *ngIf="new_order!='Y'">
+    <ion-card>
+      <ion-item color="light2">
+        <p color="dark" style="text-align:center"><b><span>Additional Menu</span></b></p>
+      </ion-item>
+    </ion-card>
+  </div>
+  <br>
+  <ion-item-group>
+    <ion-list>
+      <span *ngFor="let order of listOrder; let i = index">
+        <ion-item-sliding id="myorder{{i}}" *ngIf="i != 0">
+          <ion-item>
+            <ion-label><b><span *ngIf="i == 1">{{name_menu01}} </span>
+                <span *ngIf="i == 2">{{name_menu02}} </span>
+                <span *ngIf="i == 3">{{name_menu03}} </span>
+                <span *ngIf="i == 4">{{name_menu04}} </span>
+                <span *ngIf="i == 5">{{name_menu05}} </span>
+                <span *ngIf="i == 6">{{name_menu06}} </span>
+                <span *ngIf="i == 7">{{name_menu07}} </span>
+                <span *ngIf="i == 8">{{name_menu08}} </span>
+                <span *ngIf="i == 9">{{name_menu09}} </span>
+                <span *ngIf="i == 10">{{name_menu10}} </span>
+                <span *ngIf="i == 11">{{name_menu11}} </span>
+                <span *ngIf="i == 12">{{name_menu12}} </span>
+                <span *ngIf="i == 13">{{name_menu13}} </span>
+                <span *ngIf="i == 14">{{name_menu14}} </span>
+                <span *ngIf="i == 15">{{name_menu15}} </span>
+                <span *ngIf="i == 16">{{name_menu16}} </span>
+                <span *ngIf="i == 17">{{name_menu17}} </span>
+                <span *ngIf="i == 18">{{name_menu18}} </span>
+                <span *ngIf="i == 19">{{name_menu19}} </span>
+                <span *ngIf="i == 20">{{name_menu20}} </span>
+                <span *ngIf="i == 21">{{name_menu21}} </span>
+                <span *ngIf="i == 22">{{name_menu22}} </span>
+                <span *ngIf="i == 23">{{name_menu23}} </span>
+                <span *ngIf="i == 24">{{name_menu24}} </span>
+                <span *ngIf="i == 25">{{name_menu25}} </span>
+                <span *ngIf="i == 26">{{name_menu26}} </span>
+                <span *ngIf="i == 27">{{name_menu27}} </span>
+                <span *ngIf="i == 28">{{name_menu28}} </span>
+                <span *ngIf="i == 29">{{name_menu29}} </span>
+                <span *ngIf="i == 30">{{name_menu30}} </span></b>
+
+              <!-- baris ket-->
+              <br><span><span>
+                  <span *ngIf="i == 1">{{edit_qty01}} Pcs.</span> <span *ngIf="weight01 != 0 && i == 1">{{weight01}}
+                    gr.
+                  </span>
+                  <span *ngIf="noted01 == 'Y' && i == 1">Note : </span> <span *ngIf="i == 1">{{note_menu01}}</span>
+                  <span *ngIf="i == 2">{{edit_qty02}} Pcs.</span> <span *ngIf="weight02 != 0 && i == 2">{{weight02}}
+                    gr.
+                  </span>
+                  <span *ngIf="noted02 == 'Y' && i == 2">Note : </span> <span *ngIf="i == 2">{{note_menu02}}</span>
+                  <span *ngIf="i == 3">{{edit_qty03}} Pcs.</span> <span *ngIf="weight03 != 0 && i == 3">{{weight03}}
+                    gr.
+                  </span>
+                  <span *ngIf="noted03 == 'Y' && i == 3">Note : </span> <span *ngIf="i == 3">{{note_menu03}}</span>
+                  <span *ngIf="i == 4">{{edit_qty04}} Pcs.</span> <span *ngIf="weight04 != 0 && i == 4">{{weight04}}
+                    gr.
+                  </span>
+                  <span *ngIf="noted04 == 'Y' && i == 4">Note : </span> <span *ngIf="i == 4">{{note_menu04}}</span>
+                  <span *ngIf="i == 5">{{edit_qty05}} Pcs.</span> <span *ngIf="weight05 != 0 && i == 5">{{weight05}}
+                    gr.
+                  </span>
+                  <span *ngIf="noted05 == 'Y' && i == 5">Note : </span> <span *ngIf="i == 5">{{note_menu05}}</span>
+                  <span *ngIf="i == 6">{{edit_qty06}} Pcs.</span> <span *ngIf="weight06 != 0 && i == 6">{{weight06}}
+                    gr.
+                  </span>
+                  <span *ngIf="noted06 == 'Y' && i == 6">Note : </span> <span *ngIf="i == 6">{{note_menu06}}</span>
+                  <span *ngIf="i == 7">{{edit_qty07}} Pcs.</span> <span *ngIf="weight07 != 0 && i == 7">{{weight07}}
+                    gr.
+                  </span>
+                  <span *ngIf="noted07 == 'Y' && i == 7">Note : </span> <span *ngIf="i == 7">{{note_menu07}}</span>
+                  <span *ngIf="i == 8">{{edit_qty08}} Pcs.</span> <span *ngIf="weight08 != 0 && i == 8">{{weight08}}
+                    gr.
+                  </span>
+                  <span *ngIf="noted08 == 'Y' && i == 8">Note : </span> <span *ngIf="i == 8">{{note_menu08}}</span>
+                  <span *ngIf="i == 9">{{edit_qty09}} Pcs.</span> <span *ngIf="weight09 != 0 && i == 1">{{weight09}}
+                    gr.
+                  </span>
+                  <span *ngIf="noted09 == 'Y' && i == 9">Note : </span> <span *ngIf="i == 9">{{note_menu09}}</span>
+                  <span *ngIf="i == 10">{{edit_qty10}} Pcs.</span> <span *ngIf="weight10 != 0 && i == 10">{{weight10}}
+                    gr.
+                  </span> <span *ngIf="noted10 == 'Y' && i == 10">Note : </span> <span
+                    *ngIf="i == 10">{{note_menu10}}</span>
+
+
+                  <span *ngIf="i == 11">{{edit_qty11}} Pcs.</span> <span *ngIf="weight11 != 0 && i == 11">{{weight11}}
+                    gr.
+                  </span> <span *ngIf="noted11 == 'Y' && i == 11">Note : </span> <span
+                    *ngIf="i == 11">{{note_menu11}}</span>
+                  <span *ngIf="i == 12">{{edit_qty12}} Pcs.</span> <span *ngIf="weight12 != 0 && i == 12">{{weight12}}
+                    gr.
+                  </span> <span *ngIf="noted12 == 'Y' && i == 12">Note : </span> <span
+                    *ngIf="i == 12">{{note_menu12}}</span>
+                  <span *ngIf="i == 13">{{edit_qty13}} Pcs.</span> <span *ngIf="weight13 != 0 && i == 13">{{weight13}}
+                    gr.
+                  </span> <span *ngIf="noted13 == 'Y' && i == 13">Note : </span> <span
+                    *ngIf="i == 13">{{note_menu13}}</span>
+                  <span *ngIf="i == 14">{{edit_qty14}} Pcs.</span> <span *ngIf="weight14 != 0 && i == 14">{{weight14}}
+                    gr.
+                  </span> <span *ngIf="noted14 == 'Y' && i == 14">Note : </span> <span
+                    *ngIf="i == 14">{{note_menu14}}</span>
+                  <span *ngIf="i == 15">{{edit_qty15}} Pcs.</span> <span *ngIf="weight15 != 0 && i == 15">{{weight15}}
+                    gr.
+                  </span> <span *ngIf="noted15 == 'Y' && i == 15">Note : </span> <span
+                    *ngIf="i == 15">{{note_menu15}}</span>
+                  <span *ngIf="i == 16">{{edit_qty16}} Pcs.</span> <span *ngIf="weight16 != 0 && i == 16">{{weight16}}
+                    gr.
+                  </span> <span *ngIf="noted16 == 'Y' && i == 16">Note : </span> <span
+                    *ngIf="i == 16">{{note_menu16}}</span>
+                  <span *ngIf="i == 17">{{edit_qty17}} Pcs.</span> <span *ngIf="weight17 != 0 && i == 17">{{weight17}}
+                    gr.
+                  </span> <span *ngIf="noted17 == 'Y' && i == 17">Note : </span> <span
+                    *ngIf="i == 17">{{note_menu17}}</span>
+                  <span *ngIf="i == 18">{{edit_qty18}} Pcs.</span> <span *ngIf="weight18 != 0 && i == 18">{{weight18}}
+                    gr.
+                  </span> <span *ngIf="noted18 == 'Y' && i == 18">Note : </span> <span
+                    *ngIf="i == 18">{{note_menu18}}</span>
+                  <span *ngIf="i == 19">{{edit_qty19}} Pcs.</span> <span *ngIf="weight19 != 0 && i == 19">{{weight19}}
+                    gr.
+                  </span> <span *ngIf="noted19 == 'Y' && i == 19">Note : </span> <span
+                    *ngIf="i == 19">{{note_menu19}}</span>
+                  <span *ngIf="i == 20">{{edit_qty20}} Pcs.</span> <span *ngIf="weight20 != 0 && i == 20">{{weight20}}
+                    gr.
+                  </span> <span *ngIf="noted20 == 'Y' && i == 20">Note : </span> <span
+                    *ngIf="i == 20">{{note_menu20}}</span>
+
+
+                  <span *ngIf="i == 21">{{edit_qty21}} Pcs.</span> <span *ngIf="weight21 != 0 && i == 21">{{weight21}}
+                    gr.
+                  </span> <span *ngIf="noted21 == 'Y' && i == 21">Note : </span> <span
+                    *ngIf="i == 21">{{note_menu21}}</span>
+                  <span *ngIf="i == 22">{{edit_qty22}} Pcs.</span> <span *ngIf="weight22 != 0 && i == 22">{{weight22}}
+                    gr.
+                  </span> <span *ngIf="noted22 == 'Y' && i == 22">Note : </span> <span
+                    *ngIf="i == 22">{{note_menu22}}</span>
+                  <span *ngIf="i == 23">{{edit_qty23}} Pcs.</span> <span *ngIf="weight23 != 0 && i == 23">{{weight23}}
+                    gr.
+                  </span> <span *ngIf="noted23 == 'Y' && i == 23">Note : </span> <span
+                    *ngIf="i == 23">{{note_menu23}}</span>
+                  <span *ngIf="i == 24">{{edit_qty24}} Pcs.</span> <span *ngIf="weight24 != 0 && i == 24">{{weight24}}
+                    gr.
+                  </span> <span *ngIf="noted24 == 'Y' && i == 24">Note : </span> <span
+                    *ngIf="i == 24">{{note_menu24}}</span>
+                  <span *ngIf="i == 25">{{edit_qty25}} Pcs.</span> <span *ngIf="weight25 != 0 && i == 25">{{weight25}}
+                    gr.
+                  </span> <span *ngIf="noted25 == 'Y' && i == 25">Note : </span> <span
+                    *ngIf="i == 25">{{note_menu25}}</span>
+                  <span *ngIf="i == 26">{{edit_qty26}} Pcs.</span> <span *ngIf="weight26 != 0 && i == 26">{{weight26}}
+                    gr.
+                  </span> <span *ngIf="noted26 == 'Y' && i == 26">Note : </span> <span
+                    *ngIf="i == 26">{{note_menu26}}</span>
+                  <span *ngIf="i == 27">{{edit_qty27}} Pcs.</span> <span *ngIf="weight27 != 0 && i == 27">{{weight27}}
+                    gr.
+                  </span> <span *ngIf="noted27 == 'Y' && i == 27">Note : </span> <span
+                    *ngIf="i == 27">{{note_menu27}}</span>
+                  <span *ngIf="i == 28">{{edit_qty28}} Pcs.</span> <span *ngIf="weight28 != 0 && i == 28">{{weight28}}
+                    gr.
+                  </span> <span *ngIf="noted28 == 'Y' && i == 28">Note : </span> <span
+                    *ngIf="i == 28">{{note_menu28}}</span>
+                  <span *ngIf="i == 29">{{edit_qty29}} Pcs.</span> <span *ngIf="weight29 != 0 && i == 29">{{weight29}}
+                    gr.
+                  </span> <span *ngIf="noted29 == 'Y' && i == 29">Note : </span> <span
+                    *ngIf="i == 29">{{note_menu29}}</span>
+                  <span *ngIf="i == 30">{{edit_qty30}} Pcs.</span> <span *ngIf="weight30 != 0 && i == 30">{{weight30}}
+                    gr.
+                  </span> <span *ngIf="noted30 == 'Y' && i == 30">Note : </span> <span
+                    *ngIf="i == 30">{{note_menu30}}</span>
+                </span></span></ion-label>
+            <h3 item-end>
+              <ion-icon style="font-size: 30px" color="dark" name="add-circle" (click)="quantity(i,'...')"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+              <ion-icon style="font-size: 30px" color="dark" name="create" (click)="notes(i,'...')"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+              <ion-icon color="dark" name="listing"></ion-icon>
+            </h3>
+          </ion-item>
+          <ion-item-options side="right">
+            <button ion-button color="natura" (click)="weightOrder(i,'...')">
+              <ion-icon style="font-size: 30px" name="pizza"></ion-icon>
+            </button>
+            <button ion-button color="danger" (click)="deleteOrder(i,'...')">
+              <ion-icon style="font-size: 30px" name="trash"></ion-icon>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </span>
+    </ion-list>
+  </ion-item-group>
+
+  <ion-fab bottom right>
+    <button ion-fab color="grey_" (click)="addMenu()">
+      <ion-icon name='create'></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+
+
+<ion-footer>
+  <ion-navbar color="grey_">
+
+    <ion-row>
+      <ion-col col-3>
+        <ion-buttons style="padding-left: 30px">
+          <button ion-button icon-only (click)="view_customer(total_pax,no_sticker,notrans)">
+            <ion-icon name="contacts"></ion-icon>
+            <div>{{total_pax}}</div>
+          </button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col col-3>
+        <ion-buttons style="padding-left: 30px">
+          <button ion-button icon-only (click)="view_customer(total_pax,no_sticker,notrans)">
+            <ion-icon name="happy"></ion-icon>
+            <div>{{no_sticker}}</div>
+          </button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col col-3 style="padding-left: 30px">
+        <ion-buttons>
+          <button ion-button icon-only>
+            <ion-icon name="clipboard"></ion-icon>
+            <div>{{table}}</div>
+          </button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col col-3 style="padding-left: 30px">
+        <ion-buttons>
+          <button ion-button icon-only (click)="finish_order()">
+            <ion-icon name="log-out"></ion-icon>
+            <!-- <div>{{sumItem}}</div> -->
+          </button>
+        </ion-buttons>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-footer>

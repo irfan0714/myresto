@@ -1,0 +1,68 @@
+page-order {
+
+  .getstart {
+
+    background-image: url('../assets/imgs/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+  .list-avatar-page {
+    ion-note {
+      font-size: 12px;
+      align-self: flex-start;
+      margin-top: 14px;
+    }
+  }
+
+  .waiting {
+    background-color: #488aff;
+    border: 0px solid #e6e9ee;
+    border-radius: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .approve {
+    background-color: #32db64;
+    border: 0px solid #e6e9ee;
+    border-radius: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .reject {
+    background-color: #f53d3d;
+    border: 0px solid #e6e9ee;
+    border-radius: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .place1 {
+    background-color: #f306b8;
+    border: 0px solid #c5c5c5;
+    border-radius: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .place2 {
+    background-color: #e6ab0a;
+    border: 0px solid #c5c5c5;
+    border-radius: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .footbar {
+    background-color: #e6e9ee;
+    border: 0px solid #e6e9ee;
+    border-radius: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+
+
+}

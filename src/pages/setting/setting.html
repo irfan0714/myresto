@@ -1,0 +1,146 @@
+<ion-header>
+
+  <ion-navbar color="grey_">
+    <ion-title>Setting</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="getstart">
+  <ion-list no-border style="background-color: transparant;">
+    <ion-item (tap)="developer_option($event)">
+      <!-- <ion-toggle checked="false" ></ion-toggle> -->
+      <ion-label>
+        Developer Option
+      </ion-label>
+      <ion-icon name='construct' item-start></ion-icon>
+    </ion-item>
+
+    <ion-item *ngIf="developer_access=='Y'" (click)="apiserver()">
+      <ion-icon name='desktop' item-start></ion-icon>
+      API Server
+      <ion-note item-end>
+        {{api_server}}
+      </ion-note>
+    </ion-item>
+
+    <ion-item *ngIf="developer_access=='Y'">
+      <ion-icon name='print' item-start></ion-icon>
+      Printer
+      <ion-note item-end>
+        Conventional
+      </ion-note>
+    </ion-item>
+
+    <ion-item *ngIf="developer_access=='Y'">
+      <ion-icon name='laptop' item-start></ion-icon>
+      IP Printer
+      <ion-note item-end>
+        {{api_server}}
+      </ion-note>
+    </ion-item>
+
+    <ion-item *ngIf="developer_access=='Y'" (click)="registDevices()">
+      <ion-icon name='phone-portrait' item-start></ion-icon>
+      This Device {{regist_status}}
+      <ion-note item-end>
+        {{ip_device}}
+      </ion-note>
+    </ion-item>
+
+    <!-- <ion-item *ngIf="developer_access=='Y'">
+      <ion-toggle checked="true"></ion-toggle>
+      <ion-label>
+        Mode Auto Refresh
+      </ion-label>
+      <ion-icon name='refresh-circle' item-start></ion-icon>
+    </ion-item>
+
+    <ion-item *ngIf="developer_access=='Y'">
+      <ion-icon name='stopwatch' item-start></ion-icon>
+      Refresh Page Timer
+      <ion-note item-end>
+        {{set_timer}} Second
+      </ion-note>
+    </ion-item> -->
+
+    <ion-item *ngIf="developer_access=='Y'">
+      <ion-icon name='photos' item-start></ion-icon>
+      Change Color Limit
+      <ion-note item-end>
+        {{refresh_page_limit}} Minutes
+      </ion-note>
+    </ion-item>
+
+    <ion-item (click)="clearlocal()">
+      <ion-icon name='trash' item-start></ion-icon>
+      Clear Local
+      <ion-note item-end>
+        <ion-icon name="trash"></ion-icon>
+      </ion-note>
+    </ion-item>
+
+    <ion-item (click)="synchronizeNow()">
+      <ion-icon name='cloud-download' item-start></ion-icon>
+      Last Synchronize
+      <ion-note item-end>
+        {{last_date_synchronize}}
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='restaurant' item-start></ion-icon>
+      Resto
+      <ion-note item-end>
+        {{resto}}
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='happy' item-start></ion-icon>
+      Release
+      <ion-note item-end>
+        15.03.2019
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='phone-portrait' item-start></ion-icon>
+      About Me
+      <ion-note item-end>
+        MyResto V.120719
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-note item-start>
+        <br>
+        <h2>V.290419</h2>
+        <p>- Fix Bugs SUM Currency</p>
+        <p>- Print Font Chinesses In BFM</p>
+        <br>
+        <h2>V.270419</h2>
+        <p>- IDR convertion currency to USD and RMB</p>
+        <p>- Kurs USD and RMB Localstorage</p>
+        <p>- Add Filed Harga In trans_order_header Localstorage</p>
+        <br>
+        <h2>V.260419</h2>
+        <p>- Fix Bugs Delete Menu In LIsting Order</p>
+        <p>- Long Space Button In Order Page</p>
+        <p>- Void Order With Authorization Listing Order</p>
+        <br>
+        <h2>V.12072019</h2>
+        <p>- Auto Sycn Every Day When MyResto Ready</p>
+        <p>- Lite Version</p>
+        <br>
+      </ion-note>
+    </ion-item>
+
+
+
+  </ion-list>
+
+
+
+</ion-content>

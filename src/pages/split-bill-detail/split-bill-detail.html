@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="grey_">
+    <ion-buttons start>
+      <button *ngIf="open_menu=='Y'" ion-button icon-only (click)="btn_menu_open(NoSticker)">
+        <ion-icon name="eye"></ion-icon>
+      </button>
+      <button *ngIf="close_menu=='Y'" ion-button icon-only (click)="btn_menu_close(NoSticker)">
+        <ion-icon name="eye-off"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Split Bill {{table}}</ion-title>
+  </ion-navbar>
+
+  <ion-navbar color="light2" *ngIf="checking_list_menu=='Y'">
+    <div>
+      <ion-list no-border padding>
+        <ion-item *ngFor="let key of checking_listing_menu">
+          <ion-icon name='checkbox-outline' item-start></ion-icon>
+          {{key.name}}
+          <ion-note item-end>
+            {{key.quantity}}
+          </ion-note>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="getstart">
+  <accordion *ngFor="let val of splitdetail" [title]="val.table_id">
+
+
+    <ion-list>
+      <span *ngFor="let listMenu of listing_menu; let i = index;">
+        <ion-item>
+          <ion-label><b><span>{{listMenu.Nm}}</span></b><br><span style="font-size:9pt;"><span id="{{val.table_id+''+i}}">{{listMenu.Quty}}
+                Pcs.</span></span></ion-label>
+          <h3 item-end>
+            <ion-icon style="font-size: 20px" color="dark" name="add-circle" (click)="tambah(i,val.table_id)"></ion-icon>
+            <ion-icon color="dark" name="listing"></ion-icon>
+            <ion-icon color="dark" name="listing"></ion-icon>
+            <ion-icon style="font-size: 20px" color="dark" name="remove-circle" (click)="kurang(i,val.table_id)"></ion-icon>
+            <ion-icon color="dark" name="listing"></ion-icon>
+          </h3>
+        </ion-item>
+      </span>
+    </ion-list>
+
+  </accordion>
+
+  <ion-fab bottom right>
+    <button ion-fab color="grey_" (click)="sendingData()">
+      <ion-icon name='paper-plane'></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

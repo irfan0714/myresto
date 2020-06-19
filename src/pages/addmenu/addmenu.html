@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="grey_">
+    <ion-title>List Menu Order</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-searchbar placeholder="Search Menu By Unique Or Specific Name" (ionInput)="search($event.target.value)">
+    </ion-searchbar>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-list radio-group>
+    <ion-item *ngFor="let item of items">
+      <ion-label>{{ item.name }}</ion-label>
+      <ion-radio checked="false" value="{{ item.pcode }}"
+        (click)="chooseMenu(item.pcode,item.name,item.price,order_id)">
+      </ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>

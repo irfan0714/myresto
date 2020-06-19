@@ -1,0 +1,122 @@
+page-home {
+  .content-login {
+    .wrapper-login {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      div {
+        margin-top: -20px;
+      }
+    }
+
+    img {
+      max-width: initial;
+      height: 100%;
+    }
+
+    .brand {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 30px;
+
+      h2 {
+        width: 100%;
+        display: block;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 3.5rem;
+      }
+
+      p {
+        padding: 0px 10%;
+        text-transform: uppercase;
+        font-size: 1rem;
+      }
+    }
+
+    .form-login {
+      input {
+        width: 100%;
+        height: 35px;
+        padding: 0px 15px;
+        background: #fff;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+        margin: 5px 0px;
+        font-weight: 500;
+      }
+
+      buttonx {
+        background: #179ba6;
+        text-transform: uppercase;
+        color: #fff;
+        margin: 5px auto !important;
+
+        &.activated {
+          color: #212739;
+        }
+      }
+
+    }
+
+    .more-login {
+      margin-top: 0px;
+      width: 100%;
+    }
+
+    .more-opt {
+      margin-top: 30px;
+      margin-bottom: -50px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      color: #fff;
+
+      button {
+        font-family: roboto;
+        font-size: 1.2rem !important;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: #fff;
+        text-transform: lowercase;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #notification-button {
+    position: relative;
+    overflow: visible !important;
+  }
+
+
+  #notifications-badge {
+    background-color: #f53d3d;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 10%;
+  }
+
+  #cards {
+    ion-badge {
+      position: absolute;
+      top: -2rem;
+      right: -2rem;
+      opacity: 1;
+      font-size: 12pt;
+      color: white;
+    }
+  }
+}

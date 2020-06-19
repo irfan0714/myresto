@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar color="grey_">
+    <ion-title>Duplicate Menu </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="getstart">
+  <ion-grid>
+
+    <ion-row justify-content>
+      <ion-col col-2 *ngFor="let table of tables">
+        <div><button color="{{table.table_color}}" ion-button large (click)="duplicatemenu(table.table_id)">{{
+            table.table_id }}</button></div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="grey_">
+    <ion-title>
+      <ion-icon name="square" color="light2"></ion-icon> Table Empty : {{total_table_empty}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-start>
+        <ion-icon name="square" color="danger"></ion-icon> Table Active : {{total_table_active}}
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
